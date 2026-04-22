@@ -1,0 +1,60 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f4f9; /* Light grey background */
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.resume-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-top: 5px solid #002e5d; /* BYU Blue accent */
+}
+
+header {
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+h1 { margin: 0; color: #002e5d; font-size: 2.5rem; }
+h3 { margin: 5px 0; font-weight: 400; color: #666; }
+.email { color: #888; font-size: 0.9rem; }
+
+.section-title {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #002e5d;
+    margin-top: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+ul {
+    list-style-type: none; /* Removes bullets for a cleaner look */
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* The "Back to Home" button we made earlier */
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    color: #002e5d;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.back-btn:hover {
+    text-decoration: underline;
+}

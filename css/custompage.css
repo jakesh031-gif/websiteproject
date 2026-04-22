@@ -1,0 +1,44 @@
+/* Style 1: Body (Specifies Font Family and Font Color) */
+body {
+    font-family: Arial, sans-serif; /* Requirement: Font Family */
+    color: #333333;                /* Requirement: Font Color */
+    background-color: lightcyan;
+    margin: 40px;
+    line-height: 1.6;
+}
+
+/* Style 2: Header Div (Positioning & Styling) */
+.header-box {
+    text-align: center;
+    border-bottom: 2px solid green;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Style 3: Content Div (Positioning & Styling) */
+.content-box {
+    max-width: 600px;
+    margin: 0 auto; /* Centers the block on the page */
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #dddddd;
+}
+
+/* Style 4: Video Div (Positioning & Styling) */
+.video-box {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+/* Specific Style for the Title (Specifies Font Color) */
+h1 {
+    color: #006400; /* Dark Green */
+}
+
+/* Simple Back Button Style */
+.back-btn {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}

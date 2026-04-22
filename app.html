@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Weight Game</title>
+    <link rel="stylesheet" href="css/app.css">
+
+</head>
+<body>
+
+<a class="back-btn back=btn:hover" href="index.html">Back To Home</a>
+
+<div class="container">
+    <h1>🚀 Gravity Sim</h1>
+    <p>How would you move on another world?</p>
+    
+    <label>Your Weight (lbs/kg):</label>
+    <input type="number" id="userWeight" placeholder="Enter weight..." value="150">
+
+    <label>Destination:</label>
+    <select id="planetSelect">
+        <option value="0.38" data-emoji="☄️">Mercury</option>
+        <option value="0.91" data-emoji="☁️">Venus</option>
+        <option value="0.16" data-emoji="🌕">The Moon</option>
+        <option value="0.38" data-emoji="🔴">Mars</option>
+        <option value="2.34" data-emoji="🪐">Jupiter</option>
+        <option value="1.06" data-emoji="💍">Saturn</option>
+    </select>
+
+    <button onclick="calculateGravity()" style="width:100%; padding: 12px; background: var(--accent); border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">EXPLORE</button>
+
+    <div id="result" class="result-card">
+        <div id="planetEmoji" class="planet-display">🌍</div>
+        <div class="stats">
+            <div class="stat-box">
+                <span id="weightResult">--</span>
+                <small>New Weight</small>
+            </div>
+            <div class="stat-box">
+                <span id="jumpResult">--</span>
+                <small>Jump Height</small>
+            </div>
+        </div>
+        <p id="description" style="font-style: italic; margin-top: 15px; color: #ccc;"></p>
+    </div>
+</div>
+
+<script>
+    function calculateGravity() {
+        const weight = document.getElementById('userWeight').value;
+        const planetSelect = document.getElementById('planetSelect');
+        const gravityMult = planetSelect.value;
+        const planetName = planetSelect.options[planetSelect.selectedIndex].text;
+        const emoji = planetSelect.options[planetSelect.selectedIndex].getAttribute('data-emoji');
+
+        if (!weight || weight <= 0) {
+            alert("Please enter a valid weight!");
+            return;
+        }
+
+        // Logic: Weight = Mass * Gravity
+        const newWeight = (weight * gravityMult).toFixed(1);
+        
+        // Logic: Jump height is inversely proportional to gravity
+        // On Earth, avg jump is ~0.5m. Let's scale it.
+        const jumpHeight = (1 / gravityMult).toFixed(2);
+
+        // Update UI
+        document.getElementById('result').style.display = 'block';
+        document.getElementById('planetEmoji').innerText = emoji;
+        document.getElementById('weightResult').innerHTML = `<b>${newWeight}</b>`;
+        document.getElementById('jumpResult').innerHTML = `<b>${jumpHeight}x</b>`;
+        
+        let desc = "";
+        if(gravityMult < 1) {
+            desc = `You'd feel incredibly light on ${planetName}! You could jump ${jumpHeight} times higher than on Earth.`;
+        } else {
+            desc = `${planetName} has intense gravity. You'd feel heavy, making it much harder to move!`;
+        }
+        document.getElementById('description').innerText = desc;
+
+    }
+</script>
+
+<body>
+    
+</html>
